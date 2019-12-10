@@ -3,7 +3,7 @@ import * as Permissions from 'expo-permissions'
 
 export const requestPermissions = async (permissionDialogTitle, permissionDialogMessage) => {
   if (Platform.OS === 'android') {
-    const { status } = await Permissions.askAsync(Permissions.WRITE_EXTERNAL_STORAGE)
+    const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL)
 
     // On devices before SDK version 23, the permissions are automatically granted if they appear in the manifest,
     // so check and request should always be true.
