@@ -8,7 +8,7 @@ export const requestPermissions = async (permissionDialogTitle, permissionDialog
     // On devices before SDK version 23, the permissions are automatically granted if they appear in the manifest,
     // so check and request should always be true.
     // https://github.com/facebook/react-native-website/blob/master/docs/permissionsandroid.md
-    const isAuthorized = status === 'granted'
+    const isAuthorized = Platform.Version >= 23 ? status === 'granted' : true
     return isAuthorized
   }
   return true
